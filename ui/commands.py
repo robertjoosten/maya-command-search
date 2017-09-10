@@ -1,28 +1,14 @@
-from maya import cmds
-
-# import pyside, do qt version check for maya 2017 >
-qtVersion = cmds.about(qtVersion=True)
-if qtVersion.startswith("4"):
-    from PySide.QtGui import *
-    from PySide.QtCore import *
-    import shiboken
-else:
-    from PySide2.QtGui import *
-    from PySide2.QtCore import *
-    from PySide2.QtWidgets import *
-    import shiboken2 as shiboken
-    
 from . import utils
     
 # ----------------------------------------------------------------------------
     
-PIN_ICON = QIcon(":/nodeGrapherPinnedLarge.png")
-UNPIN_ICON = QIcon(":/nodeGrapherUnpinnedLarge.png")
-OPTION_ICON = QIcon(":/hsNothing.png")
+PIN_ICON = utils.QIcon(":/nodeGrapherPinnedLarge.png")
+UNPIN_ICON = utils.QIcon(":/nodeGrapherUnpinnedLarge.png")
+OPTION_ICON = utils.QIcon(":/hsNothing.png")
 
 # ----------------------------------------------------------------------------
     
-class Commands(QWidget):
+class Commands(utils.QWidget):
     """
     Commands
     
@@ -32,26 +18,26 @@ class Commands(QWidget):
     :param QWidget parent:
     """
     def __init__(self, parent=None):
-        QWidget.__init__(self, parent)
+        utils.QWidget.__init__(self, parent)
         
         # variable
         self.parent = parent
 
         # create layout
-        layout = QHBoxLayout(self)
+        layout = utils.QHBoxLayout(self)
         layout.setContentsMargins(0,0,0,0)
         layout.setSpacing(0)
 
         # create scroll area
-        scrollArea = QScrollArea(self)
+        scrollArea = utils.QScrollArea(self)
         scrollArea.setWidgetResizable(True)
-        scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        scrollArea.setHorizontalScrollBarPolicy(utils.Qt.ScrollBarAlwaysOff)
         
         # create main widget widget
-        self.widget = QWidget()
+        self.widget = utils.QWidget()
         
         # create main layout
-        self.layout = QVBoxLayout(self.widget)
+        self.layout = utils.QVBoxLayout(self.widget)
         self.layout.setContentsMargins(3,0,3,0)
         self.layout.setSpacing(0)
 
@@ -59,11 +45,11 @@ class Commands(QWidget):
         layout.addWidget(scrollArea)
         
         # spacer
-        spacer = QSpacerItem(
+        spacer = utils.QSpacerItem(
             1, 
             1, 
-            QSizePolicy.Minimum,
-            QSizePolicy.Expanding
+            utils.QSizePolicy.Minimum,
+            utils.QSizePolicy.Expanding
         )
         self.layout.addItem(spacer)
         
@@ -116,9 +102,19 @@ class Commands(QWidget):
         """
         return self.layout.isEmpty()
 
-class Button(QWidget):
+class Button(utils.QWidget):
+    """
+    Button
+    
+    This widget gets initialized with the command data and builds it
+    accordingly, the only variable option is the option box that may
+    or may not be added into the info.
+    
+    :param QWidget parent:
+    :param dict info:
+    """
     def __init__(self, parent, info):
-        QWidget.__init__(self, parent)
+        utils.QWidget.__init__(self, parent)
 
         # variable
         self.info = info
@@ -138,18 +134,18 @@ class Button(QWidget):
         self.commandOption = info.get("cmdOption")
         
         # create pin
-        self.pin = QPushButton(self)
+        self.pin = utils.QPushButton(self)
         self.pin.setStyleSheet(hoverSS1)
         self.setAsIcon(self.pin)
         
         # create icon
-        icon  = QPushButton(self)
+        icon = utils.QPushButton(self)
         icon.setIcon(info.get("icon"))
         icon.released.connect(self.exec_)
         self.setAsIcon(icon)
         
         # create main
-        main = QPushButton(info.get("name"), self)
+        main = utils.QPushButton(info.get("name"), self)
         main.setFixedHeight(20)
         main.setStyleSheet(basicSS + hoverSS2)
         main.setFlat(True)
@@ -157,7 +153,7 @@ class Button(QWidget):
         main.released.connect(self.exec_)
 
         # create layout
-        layout = QHBoxLayout(self)
+        layout = utils.QHBoxLayout(self)
         layout.setContentsMargins(0,0,0,0)
         layout.setSpacing(0)
         
@@ -168,7 +164,7 @@ class Button(QWidget):
         
         # create option box
         if self.commandOption:
-            option = QPushButton(self)
+            option = utils.QPushButton(self)
             option.setStyleSheet(hoverSS1)
             option.setIcon(OPTION_ICON)
             option.pressed.connect(self.execOption_)
@@ -192,7 +188,7 @@ class Button(QWidget):
         b.setFixedWidth(20)
         b.setFixedHeight(20)
         b.setFlat(True)
-        b.setIconSize(QSize(18,18))  
+        b.setIconSize(utils.QSize(18,18))  
           
     # ------------------------------------------------------------------------
         

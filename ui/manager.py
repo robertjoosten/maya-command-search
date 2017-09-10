@@ -1,21 +1,7 @@
-from maya import cmds
-
-# import pyside, do qt version check for maya 2017 >
-qtVersion = cmds.about(qtVersion=True)
-if qtVersion.startswith("4"):
-    from PySide.QtGui import *
-    from PySide.QtCore import *
-    import shiboken
-else:
-    from PySide2.QtGui import *
-    from PySide2.QtCore import *
-    from PySide2.QtWidgets import *
-    import shiboken2 as shiboken
-    
 from . import utils
 from .. import commands, pins
 
-class ManagerMenu(QMenu):
+class ManagerMenu(utils.QMenu):
     """
     Manager Menu 
     
@@ -26,7 +12,7 @@ class ManagerMenu(QMenu):
     :param QWidget parent:
     """
     def __init__(self, parent=None):
-        QMenu.__init__(self, parent)
+        utils.QMenu.__init__(self, parent)
         
         # variable
         self.parent = parent
@@ -61,7 +47,7 @@ class ManagerMenu(QMenu):
         
         :param QWidget widget: widget to be added to the menu
         """
-        action = QWidgetAction(self)
+        action = utils.QWidgetAction(self)
         action.setDefaultWidget(widget)
         self.addAction(action)
         
@@ -93,7 +79,7 @@ class ManagerMenu(QMenu):
             return
             
         # add pins group
-        self.group = QButtonGroup(self)
+        self.group = utils.QButtonGroup(self)
         self.group.buttonReleased.connect(self.setActive)
         
         g = utils.Divider(self, "Pins")
@@ -102,7 +88,7 @@ class ManagerMenu(QMenu):
         # add pins
         for name in names:
             # create pin
-            radio = QRadioButton(name)
+            radio = utils.QRadioButton(name)
             
             # set active
             if name == self.active:
@@ -119,7 +105,7 @@ class ManagerMenu(QMenu):
         g = utils.Divider(self, "Sets")  
         self.add(g)        
         
-        self.edit = QLineEdit()
+        self.edit = utils.QLineEdit()
         self.add(self.edit)    
 
         self.addAction("Add / Edit", self.pinAdd)
@@ -179,10 +165,12 @@ class ManagerMenu(QMenu):
         """
         Add pin set, store all if the currently pinned commands and store
         then under the provided pin set name.
+        
+        :raises ValueError: if name is invalid or no pins are found
         """
         # get pin name
         if not self.pinName:
-            cmds.warning("Search Commands: invalid name")
+            raise ValueError("Search Commands: invalid name")
             return
         
         # get pinned name
@@ -194,7 +182,7 @@ class ManagerMenu(QMenu):
             pinned.append(v.get("hierarchy"))
         
         if not pinned:
-            cmds.warning("Search Commands: no pinned commands")
+            raise ValueError("Search Commands: no pinned commands")
             return
         
         # set active
@@ -218,9 +206,11 @@ class ManagerMenu(QMenu):
         """
         Delete pin set, check if the provided name exists in the pin sets.
         If it does remove it from the data set and save.
+        
+        :raises ValueError: if name is invalid
         """
         if not self.pinName in pins.get().keys():
-            cmds.warning( "Search Commands: invalid name" )
+            raise ValueError("Search Commands: invalid name")
             return
         
         # pop from list

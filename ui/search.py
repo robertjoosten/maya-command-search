@@ -1,28 +1,14 @@
-from maya import cmds
-
-# import pyside, do qt version check for maya 2017 >
-qtVersion = cmds.about(qtVersion=True)
-if qtVersion.startswith("4"):
-    from PySide.QtGui import *
-    from PySide.QtCore import *
-    import shiboken
-else:
-    from PySide2.QtGui import *
-    from PySide2.QtCore import *
-    from PySide2.QtWidgets import *
-    import shiboken2 as shiboken
-      
 from . import manager, results, utils
 from .. import commands
 
 # ---------------------------------------------------------------------------
 
-BAR_CLOSE_ICON = QPixmap( ":/closeBar.png" )
-BAR_OPEN_ICON  = QPixmap( ":/openBar.png" )
+BAR_CLOSE_ICON = utils.QPixmap( ":/closeBar.png" )
+BAR_OPEN_ICON = utils.QPixmap( ":/openBar.png" )
 
 # ---------------------------------------------------------------------------
     
-class SearchWidget(QWidget):
+class SearchWidget(utils.QWidget):
     """
     Search Widget 
     
@@ -36,7 +22,7 @@ class SearchWidget(QWidget):
     :param QWidget parent:
     """
     def __init__(self, parent=None):
-        QWidget.__init__(self, parent)
+        utils.QWidget.__init__(self, parent)
         
         # get commands
         if not commands.get():
@@ -46,20 +32,20 @@ class SearchWidget(QWidget):
         self.setObjectName("CMDSearch")
         
         # create layout
-        layout = QHBoxLayout(self)
+        layout = utils.QHBoxLayout(self)
         layout.setContentsMargins(0,0,0,0)
         layout.setSpacing(1)
             
         # create bar
-        self.bar = QPushButton(self)
+        self.bar = utils.QPushButton(self)
         self.bar.setFlat(True)
         self.bar.setFixedWidth(8)
         self.bar.setFixedHeight(25)   
         self.bar.setIcon(BAR_CLOSE_ICON)
-        self.bar.setIconSize(QSize(8,25))
+        self.bar.setIconSize(utils.QSize(8,25))
         
         # create container
-        self.container = QWidget(self)
+        self.container = utils.QWidget(self)
         self.container.setFixedWidth(250)
         
         # add widgets
@@ -67,16 +53,16 @@ class SearchWidget(QWidget):
         layout.addWidget(self.container)
         
         # create layout
-        layout = QHBoxLayout(self.container)
+        layout = utils.QHBoxLayout(self.container)
         layout.setContentsMargins(0,0,0,0)
         layout.setSpacing(1)
         
-        button = QPushButton(self)
+        button = utils.QPushButton(self)
         button.setFlat(True)
         button.setFixedWidth(25)
         button.setFixedHeight(25)   
         button.setIcon(utils.findSearchIcon())
-        button.setIconSize(QSize(25,25))   
+        button.setIconSize(utils.QSize(25,25))   
         
         self.search = SearchEdit(self, self.container)
         
@@ -175,20 +161,20 @@ class SearchWidget(QWidget):
             
 # ----------------------------------------------------------------------------
 
-class SearchEdit(QLineEdit):
+class SearchEdit(utils.QLineEdit):
     """
     Subclass of a line edit to force it to show the parents results window
     on release of the left buttons.
     """
     def __init__(self, parent, widgetParent):
-        QLineEdit.__init__(self, widgetParent)
+        utils.QLineEdit.__init__(self, widgetParent)
         self.parent = parent
         
     # -----------------------------------------------------------------------
 
     def mouseReleaseEvent(self, e): 
-        if e.button() == Qt.LeftButton:                
+        if e.button() == utils.Qt.LeftButton:                
             if not self.parent.results.isVisible():
                 self.parent.typing()
                 
-        QLineEdit.mouseReleaseEvent(self, e)
+        utils.QLineEdit.mouseReleaseEvent(self, e)

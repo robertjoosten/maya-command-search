@@ -1,18 +1,6 @@
 import re
 from maya import cmds
 
-# import pyside, do qt version check for maya 2017 >
-qtVersion = cmds.about(qtVersion=True)
-if qtVersion.startswith("4"):
-    from PySide.QtGui import *
-    from PySide.QtCore import *
-    import shiboken
-else:
-    from PySide2.QtGui import *
-    from PySide2.QtCore import *
-    from PySide2.QtWidgets import *
-    import shiboken2 as shiboken
-
 from .ui import utils
 
 def get():
@@ -114,13 +102,13 @@ def _store(parent, parents=[]):
             continue
             
         # process menu
-        if type(item) == QMenu:
+        if type(item) == utils.QMenu:
             tree.append(
                 getMenu(item)
             )
             
         # process item
-        elif type(item) == QWidgetAction:  
+        elif type(item) == utils.QWidgetAction:  
             # get dynamic p
             dynamic = item.dynamicPropertyNames()
             
@@ -175,13 +163,13 @@ def getItem(item, name, parents):
       
     # store commands      
     COMMANDS[name] = dict( )
-    COMMANDS[name]["name"]        = text
-    COMMANDS[name]["pin"]         = False
-    COMMANDS[name]["cmd"]         = item 
-    COMMANDS[name]["icon"]        = QIcon( ":/{0}".format(icon))
-    COMMANDS[name]["group"]       = parents[0]
-    COMMANDS[name]["search"]      = "".join([p.lower() for p in parents]) 
-    COMMANDS[name]["hierarchy"]   = " > ".join(parents)
+    COMMANDS[name]["name"] = text
+    COMMANDS[name]["pin"] = False
+    COMMANDS[name]["cmd"] = item 
+    COMMANDS[name]["icon"] = utils.QIcon( ":/{0}".format(icon))
+    COMMANDS[name]["group"] = parents[0]
+    COMMANDS[name]["search"] = "".join([p.lower() for p in parents]) 
+    COMMANDS[name]["hierarchy"] = " > ".join(parents)
       
 def getItemOptionBox(item, name):
     """

@@ -1,17 +1,3 @@
-from maya import cmds
-
-# import pyside, do qt version check for maya 2017 >
-qtVersion = cmds.about(qtVersion=True)
-if qtVersion.startswith("4"):
-    from PySide.QtGui import *
-    from PySide.QtCore import *
-    import shiboken
-else:
-    from PySide2.QtGui import *
-    from PySide2.QtCore import *
-    from PySide2.QtWidgets import *
-    import shiboken2 as shiboken
-    
 from . import utils
 from . import commands
 
@@ -21,7 +7,7 @@ MENU_MAX_RESULTS = 20
 
 # ----------------------------------------------------------------------------
     
-class ResultsMenu(QMenu):
+class ResultsMenu(utils.QMenu):
     """
     Results Menu
     
@@ -30,9 +16,9 @@ class ResultsMenu(QMenu):
     
     :param QWidget parent:
     """
-    aboutToClose = Signal()
+    aboutToClose = utils.Signal()
     def __init__(self, parent=None):
-        QMenu.__init__(self, parent)
+        utils.QMenu.__init__(self, parent)
         
         # variable
         self.parent = parent
@@ -47,7 +33,7 @@ class ResultsMenu(QMenu):
         self.widget.setMaximumHeight(MENU_MAX_RESULTS*24)
         
         # add to menu
-        action = QWidgetAction(self)
+        action = utils.QWidgetAction(self)
         action.setDefaultWidget(self.widget)
         self.addAction(action)
         
@@ -58,8 +44,8 @@ class ResultsMenu(QMenu):
     
     def mouseReleaseEvent( self, e ):
         # process click
-        cursor = QCursor.pos()
-        menu   = self.pos()
+        cursor = utils.QCursor.pos()
+        menu = self.pos()
 
         x = menu.x() <= cursor.x() <= (menu.x() + 250)
         y = menu.y() <= cursor.y() <= (menu.y() + 12)
@@ -98,9 +84,9 @@ class ResultsMenu(QMenu):
         self.position()
 
         # show menu
-        QMenu.show(self)  
+        utils.QMenu.show(self)  
             
-class ResultsWindow(QDockWidget):
+class ResultsWindow(utils.QDockWidget):
     """
     Results Menu
     
@@ -109,24 +95,26 @@ class ResultsWindow(QDockWidget):
     
     :param QWidget parent:
     """
-    aboutToClose = Signal()
+    aboutToClose = utils.Signal()
     def __init__(self, parent=None):
-        QDockWidget.__init__(self, parent)
+        utils.QDockWidget.__init__(self, parent)
         
         # variable
         self.parent = parent
-        self.setAllowedAreas(Qt.RightDockWidgetArea|Qt.LeftDockWidgetArea)
+        self.setAllowedAreas(
+            utils.Qt.RightDockWidgetArea|utils.Qt.LeftDockWidgetArea
+        )
         
         self.setParent(parent)        
-        self.setWindowFlags(Qt.Window)  
+        self.setWindowFlags(utils.Qt.Window)  
         self.setWindowTitle("Search Commands")
         self.resize(250, 500)
         
-        cw = QWidget(self)
+        cw = utils.QWidget(self)
         self.setWidget(cw)
         
         # create layout
-        layout = QHBoxLayout(cw)
+        layout = utils.QHBoxLayout(cw)
         layout.setContentsMargins(0,0,0,0)
         layout.setSpacing(0)
         
@@ -144,10 +132,10 @@ class ResultsWindow(QDockWidget):
         
     def closeEvent(self, e):
         self.aboutToClose.emit()
-        QDockWidget.closeEvent(self, e)
+        utils.QDockWidget.closeEvent(self, e)
         
     # ------------------------------------------------------------------------
         
     def show(self, num):
-        QDockWidget.show(self)
+        utils.QDockWidget.show(self)
         
