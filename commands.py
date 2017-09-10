@@ -65,17 +65,16 @@ def filter(search):
 
 def store(menuBar):  
     """
-    Process the parent to see if any if its children meet the search 
+    Process Maya's menubar to see if any if its children meet the search 
     command requirements. If so, the button and commands will be added 
     to the commands variable.
-    
-    :param QMenuBar parent: search starting point
     """
     # reset commands
     global COMMANDS
     COMMANDS = {}
     
     # loop menu bar
+    menuBar = utils.mayaMenu()
     _store(menuBar)
     
     print "Search Commands: {0} buttons registered".format(len(COMMANDS))

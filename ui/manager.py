@@ -226,6 +226,6 @@ class ManagerMenu(utils.QMenu):
         """
         Refresh command list and clear the pin set selection.
         """
-        commands.store(mayaMenu())
+        commands.store()
         self.pinClear()
         

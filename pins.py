@@ -68,11 +68,13 @@ def write():
     """
     Encode the data stored in the global PINS variable and write it to pins
     location path.
+    
+    :raises ValueError: if save location cannot be found
     """
     # get pin path
     path = findLocation()
     if not path:
-        print "Search Commands: file not found"
+        raise ValueError("Search Commands: file not found")
         return
     
     # write data

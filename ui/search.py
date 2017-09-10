@@ -26,7 +26,7 @@ class SearchWidget(utils.QWidget):
         
         # get commands
         if not commands.get():
-            commands.store(utils.mayaMenu())
+            commands.store()
             
         # variable
         self.setObjectName("CMDSearch")
