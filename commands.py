@@ -63,7 +63,7 @@ def filter(search):
 
 # ----------------------------------------------------------------------------  
 
-def store(menuBar):  
+def store():  
     """
     Process Maya's menubar to see if any if its children meet the search 
     command requirements. If so, the button and commands will be added 
