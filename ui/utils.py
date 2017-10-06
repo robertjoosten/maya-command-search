@@ -12,6 +12,15 @@ else:
     from PySide2.QtCore import *
     from PySide2.QtWidgets import *
     import shiboken2 as shiboken
+    
+# ----------------------------------------------------------------------------
+  
+FONT = QFont()
+FONT.setFamily("Consolas")
+
+BOLT_FONT = QFont()
+BOLT_FONT.setFamily("Consolas")
+BOLT_FONT.setWeight(100)  
 
 # -----------------------------------------------------------------------------    
     
