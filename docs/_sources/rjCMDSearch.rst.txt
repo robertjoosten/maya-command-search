@@ -1,0 +1,25 @@
+rjCMDSearch package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    rjCMDSearch.ui
+
+Submodules
+----------
+
+.. toctree::
+
+   rjCMDSearch.commands
+   rjCMDSearch.pins
+
+Module contents
+---------------
+
+.. automodule:: rjCMDSearch
+    :members:
+    :undoc-members:
+    :show-inheritance:

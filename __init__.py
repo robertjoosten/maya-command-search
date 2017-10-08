@@ -1,35 +1,57 @@
-"""					
-I N S T A L L A T I O N:
-    Copy the "rjCMDSearch" folder to your Maya scripts directory:
-        C:\Users\<USER>\Documents\maya\scripts
+"""			
+Read all buttons in Maya's native menu and make them searchable and executable. 
 
-U S A G E:
-    Add the interface and functionality to Maya:
-        import maya.cmds as cmds
-        cmds.evalDeferred("import rjCMDSearch; rjCMDSearch.install()")
+.. figure:: https://github.com/robertjoosten/rjCMDSearch/raw/master/README.gif
+   :align: center
+   
+`Link to Video <https://vimeo.com/109367578>`_
 
-N O T E:
-    Every time the UI is opened for the first time in a new session 
-    of Maya, the script loops over all of Mayas MenuBar content to 
-    retrieve all of the its information and store it in an easy accessible 
-    format. Since its over 1600 buttons, this process will take a few 
-    seconds. Its best to add this script to the userSetup.py so the 
-    interface will automatically be added to Maya when it is started.
+Installation
+============
+Copy the **rjCMDSearch** folder to your Maya scripts directory
+::
+    C:/Users/<USER>/Documents/maya/scripts
+		
+Usage
+=====
+Add the interface and functionality to Maya:
+::
+    import maya.cmds as cmds
+    cmds.evalDeferred("import rjCMDSearch; rjCMDSearch.install()")
 
-    The commands can always be refreshed by clicking on the magnifying
-    glass button.
+Note
+====
+Every time the UI is opened for the first time in a new session 
+of Maya, the script loops over all of Mayas MenuBar content to 
+retrieve all of the its information and store it in an easy accessible 
+format. Since its over 1600 buttons, this process will take a few 
+seconds. Its best to add this script to the userSetup.py so the 
+interface will automatically be added to Maya when it is started.
 
-    The script now also tries to install a hotkey on the Ctrl + Alt + Space
-    combination. If there is already a hotkey on this combination the 
-    hotkey will not be installed. This hotkey will set the focus to the 
-    search command and open up the menu if there are any matches.
+The commands can always be refreshed by clicking on the magnifying
+glass button.
 
-    It is also possible to store your pins and create different pins sets 
-    for different tasks, meaning you can create your own custom menu. This 
-    functionality can be accessed by clicking the magnifying glass button.
+The script now also tries to install a hotkey on the Ctrl + Alt + Space
+combination. If there is already a hotkey on this combination the 
+hotkey will not be installed. This hotkey will set the focus to the 
+search command and open up the menu if there are any matches.
 
-    Also a thank you too Perry Leijten and Guillaume Dufief for their 
-    ideas and pointers to improve the script.
+It is also possible to store your pins and create different pins sets 
+for different tasks, meaning you can create your own custom menu. This 
+functionality can be accessed by clicking the magnifying glass button.
+
+Also a thank you too Perry Leijten and Guillaume Dufief for their 
+ideas and pointers to improve the script.
+
+Command Line
+============
+The following functions can be used outside of the ui. Make sure the 
+language is set to python.
+::
+    import rjCMDSearch; rjCMDSearch.focus()  
+
+Code
+====
 """
 
 from maya import cmds

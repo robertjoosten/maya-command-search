@@ -2,9 +2,9 @@ from . import utils
     
 # ----------------------------------------------------------------------------
     
-PIN_ICON = utils.QIcon(":/nodeGrapherPinnedLarge.png")
-UNPIN_ICON = utils.QIcon(":/nodeGrapherUnpinnedLarge.png")
-OPTION_ICON = utils.QIcon(":/hsNothing.png")
+PIN_ICON = ":/nodeGrapherPinnedLarge.png"
+UNPIN_ICON = ":/nodeGrapherUnpinnedLarge.png"
+OPTION_ICON = ":/hsNothing.png"
 
 # ----------------------------------------------------------------------------
     
@@ -166,7 +166,7 @@ class Button(utils.QWidget):
         if self.commandOption:
             option = utils.QPushButton(self)
             option.setStyleSheet(hoverSS1)
-            option.setIcon(OPTION_ICON)
+            option.setIcon(utils.QIcon(OPTION_ICON))
             option.pressed.connect(self.execOption_)
             self.setAsIcon(option)
             layout.addWidget(option)
@@ -194,12 +194,12 @@ class Button(utils.QWidget):
         
     def setPin(self):
         self.info["pin"] = True
-        self.pin.setIcon(PIN_ICON)
+        self.pin.setIcon(utils.QIcon(PIN_ICON))
         self.pin.pressed.connect(self.setUnpin)
 
     def setUnpin(self):
         self.info["pin"] = False
-        self.pin.setIcon(UNPIN_ICON)
+        self.pin.setIcon(utils.QIcon(UNPIN_ICON))
         self.pin.pressed.connect(self.setPin)
         
     # ------------------------------------------------------------------------

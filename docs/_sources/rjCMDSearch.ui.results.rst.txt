@@ -1,0 +1,7 @@
+rjCMDSearch\.ui\.results module
+===============================
+
+.. automodule:: rjCMDSearch.ui.results
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -3,8 +3,8 @@ from .. import commands
 
 # ---------------------------------------------------------------------------
 
-BAR_CLOSE_ICON = utils.QPixmap( ":/closeBar.png" )
-BAR_OPEN_ICON = utils.QPixmap( ":/openBar.png" )
+BAR_CLOSE_ICON = ":/closeBar.png"
+BAR_OPEN_ICON = ":/openBar.png"
 
 # ---------------------------------------------------------------------------
     
@@ -41,7 +41,7 @@ class SearchWidget(utils.QWidget):
         self.bar.setFlat(True)
         self.bar.setFixedWidth(8)
         self.bar.setFixedHeight(25)   
-        self.bar.setIcon(BAR_CLOSE_ICON)
+        self.bar.setIcon(utils.QPixmap(BAR_CLOSE_ICON))
         self.bar.setIconSize(utils.QSize(8,25))
         
         # create container
@@ -154,10 +154,10 @@ class SearchWidget(utils.QWidget):
         """
         if self.container.isVisible():
             self.container.setVisible(False)
-            self.bar.setIcon(BAR_CLOSE_ICON)
+            self.bar.setIcon(utils.QPixmap(BAR_CLOSE_ICON))
         else:
             self.container.setVisible(True)
-            self.bar.setIcon(BAR_OPEN_ICON)
+            self.bar.setIcon(utils.QPixmap(BAR_OPEN_ICON))
             
 # ----------------------------------------------------------------------------
 

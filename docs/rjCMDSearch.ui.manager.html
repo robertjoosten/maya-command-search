@@ -1,0 +1,224 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>rjCMDSearch.ui.manager module &#8212; rjCMDSearch  &#39;&#39; documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     ' &#39;&#39;',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">rjCMDSearch  &#39;&#39; documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-rjCMDSearch.ui.manager">
+<span id="rjcmdsearch-ui-manager-module"></span><h1>rjCMDSearch.ui.manager module<a class="headerlink" href="#module-rjCMDSearch.ui.manager" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu">
+<em class="property">class </em><code class="descclassname">rjCMDSearch.ui.manager.</code><code class="descname">ManagerMenu</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">PySide.QtGui.QMenu</span></code></p>
+<p>Manager Menu</p>
+<p>Used to create / edit and delete different pin sets and be able to switch 
+between them, it also features the functionality to refresh the command 
+list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parent</strong> (<em>QWidget</em>) – </td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.aboutToShow_">
+<code class="descname">aboutToShow_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.aboutToShow_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Before the menu is shown, the pin set are read, the menu is populated 
+with the read pin set data and the menu is positioned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>widget</em><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add widget to a QWidgetAction and add it to the menu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>widget</strong> (<em>QWidget</em>) – widget to be added to the menu</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.pinAdd">
+<code class="descname">pinAdd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.pinAdd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add pin set, store all if the currently pinned commands and store
+then under the provided pin set name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>ValueError</strong> – if name is invalid or no pins are found</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.pinClear">
+<code class="descname">pinClear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.pinClear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear all pins and clear set selection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.pinDelete">
+<code class="descname">pinDelete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.pinDelete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete pin set, check if the provided name exists in the pin sets.
+If it does remove it from the data set and save.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>ValueError</strong> – if name is invalid</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.pinName">
+<code class="descname">pinName</code><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.pinName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get text from QLineEdit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.populate">
+<code class="descname">populate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.populate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populate the menu, clears the menu first, then adds the pins, set 
+manager and finally the command refresh option.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.populateCommands">
+<code class="descname">populateCommands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.populateCommands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create command refresh button.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.populatePins">
+<code class="descname">populatePins</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.populatePins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read pin set data and create radio buttons so the user can switch
+between the different sets available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.populateSets">
+<code class="descname">populateSets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.populateSets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create set manager buttons.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.position">
+<code class="descname">position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position the menu underneath its parent.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.refresh">
+<code class="descname">refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh command list and clear the pin set selection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.setActive">
+<code class="descname">setActive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.setActive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch active pin set to checked radio button.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rjCMDSearch.ui.manager.ManagerMenu.staticMetaObject">
+<code class="descname">staticMetaObject</code><em class="property"> = &lt;PySide.QtCore.QMetaObject object&gt;</em><a class="headerlink" href="#rjCMDSearch.ui.manager.ManagerMenu.staticMetaObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/rjCMDSearch.ui.manager.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">rjCMDSearch  &#39;&#39; documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, &#39;Robert Joosten&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
+    </div>
+  </body>
+</html>

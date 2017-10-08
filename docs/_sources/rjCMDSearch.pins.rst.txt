@@ -1,0 +1,7 @@
+rjCMDSearch\.pins module
+========================
+
+.. automodule:: rjCMDSearch.pins
+    :members:
+    :undoc-members:
+    :show-inheritance:
