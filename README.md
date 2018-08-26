@@ -13,15 +13,13 @@ Every time the UI is opened for the first time in a new session of Maya, the scr
 
 The commands can always be refreshed by clicking on the magnifying glass button.
 
-The script now also tries to install a hotkey on the `Ctrl + Alt + Space` combination. If there is already a hotkey on this combination the hotkey will not be installed. This hotkey will set the focus to the search command and open up the menu if there are any matches.
-
 It is also possible to store your pins and create different pins sets for different tasks, meaning you can create your own custom menu. This functionality can be accessed by clicking the magnifying glass button.
 
 Also a thank you too Perry Leijten and Guillaume Dufief for their ideas and pointers to improve the script.
 
-## Command line
-The following functions can be used outside of the ui. Make sure the 
-language is set to python.
+## Hotkey
+The hotkey function can be used to setup hotkeys to manage the command search
+widget. This command will set focus to the widget.
 
 ```python
 import rjCMDSearch; rjCMDSearch.focus()

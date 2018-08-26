@@ -33,7 +33,7 @@ ideas and pointers to improve the script.
 Hotkey
 ======
 The hotkey function can be used to setup hotkeys to manage the command search
-wiget. This command will set focus to the widget.
+widget. This command will set focus to the widget.
 
 ::
     import commandSearch; commandSearch.focus()  
