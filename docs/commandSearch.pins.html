@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>rjCMDSearch.pins module &#8212; rjCMDSearch  &#39;&#39; documentation</title>
+    <title>commandSearch.pins module &#8212; commandSearch  &#39;&#39; documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">rjCMDSearch  &#39;&#39; documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">commandSearch  &#39;&#39; documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -43,11 +43,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-rjCMDSearch.pins">
-<span id="rjcmdsearch-pins-module"></span><h1>rjCMDSearch.pins module<a class="headerlink" href="#module-rjCMDSearch.pins" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-commandSearch.pins">
+<span id="commandsearch-pins-module"></span><h1>commandSearch.pins module<a class="headerlink" href="#module-commandSearch.pins" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="rjCMDSearch.pins.findLocation">
-<code class="descclassname">rjCMDSearch.pins.</code><code class="descname">findLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.pins.findLocation" title="Permalink to this definition">¶</a></dt>
+<dt id="commandSearch.pins.findLocation">
+<code class="descclassname">commandSearch.pins.</code><code class="descname">findLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandSearch.pins.findLocation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pins get stored in the LOCALAPPDATA variable as a json file, since the
 local path changes per user, the path gets contructed each time. In case
 the LOCALAPPDATA directory gets cleared.</p>
@@ -64,8 +64,8 @@ the LOCALAPPDATA directory gets cleared.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="rjCMDSearch.pins.get">
-<code class="descclassname">rjCMDSearch.pins.</code><code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.pins.get" title="Permalink to this definition">¶</a></dt>
+<dt id="commandSearch.pins.get">
+<code class="descclassname">commandSearch.pins.</code><code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandSearch.pins.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all pins from the global variable, if the global variable cannot be 
 found an empty dictionary will be returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -81,16 +81,16 @@ found an empty dictionary will be returned.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="rjCMDSearch.pins.read">
-<code class="descclassname">rjCMDSearch.pins.</code><code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.pins.read" title="Permalink to this definition">¶</a></dt>
+<dt id="commandSearch.pins.read">
+<code class="descclassname">commandSearch.pins.</code><code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandSearch.pins.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the data stored in the pins file and set it in the global PINS
 variable. If a path cannot be found, the PINS variable will be an empty
 dictionary.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="rjCMDSearch.pins.write">
-<code class="descclassname">rjCMDSearch.pins.</code><code class="descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rjCMDSearch.pins.write" title="Permalink to this definition">¶</a></dt>
+<dt id="commandSearch.pins.write">
+<code class="descclassname">commandSearch.pins.</code><code class="descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandSearch.pins.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode the data stored in the global PINS variable and write it to pins
 location path.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -114,7 +114,7 @@ location path.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/rjCMDSearch.pins.rst.txt"
+      <li><a href="_sources/commandSearch.pins.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -141,11 +141,11 @@ location path.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">rjCMDSearch  &#39;&#39; documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">commandSearch  &#39;&#39; documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, &#39;Robert Joosten&#39;.
+        &#169; Copyright 2018, &#39;Robert Joosten&#39;.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
     </div>
   </body>

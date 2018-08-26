@@ -1,7 +1,7 @@
-rjCMDSearch\.ui\.search module
+commandSearch\.commands module
 ==============================
 
-.. automodule:: rjCMDSearch.ui.search
+.. automodule:: commandSearch.commands
     :members:
     :undoc-members:
     :show-inheritance:

@@ -1,0 +1,19 @@
+commandSearch\.ui package
+=========================
+
+.. automodule:: commandSearch.ui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+
+   commandSearch.ui.commands
+   commandSearch.ui.manager
+   commandSearch.ui.results
+   commandSearch.ui.search
+   commandSearch.ui.utils
+

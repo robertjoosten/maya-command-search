@@ -1,0 +1,7 @@
+commandSearch\.pins module
+==========================
+
+.. automodule:: commandSearch.pins
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>rjCMDSearch.ui package &#8212; rjCMDSearch  &#39;&#39; documentation</title>
+    <title>commandSearch.decorators module &#8212; commandSearch  &#39;&#39; documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">rjCMDSearch  &#39;&#39; documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">commandSearch  &#39;&#39; documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -43,23 +43,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="rjcmdsearch-ui-package">
-<h1>rjCMDSearch.ui package<a class="headerlink" href="#rjcmdsearch-ui-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="rjCMDSearch.ui.commands.html">rjCMDSearch.ui.commands module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rjCMDSearch.ui.manager.html">rjCMDSearch.ui.manager module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rjCMDSearch.ui.results.html">rjCMDSearch.ui.results module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rjCMDSearch.ui.search.html">rjCMDSearch.ui.search module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rjCMDSearch.ui.utils.html">rjCMDSearch.ui.utils module</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="module-rjCMDSearch.ui">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rjCMDSearch.ui" title="Permalink to this headline">¶</a></h2>
-</div>
+  <div class="section" id="module-commandSearch.decorators">
+<span id="commandsearch-decorators-module"></span><h1>commandSearch.decorators module<a class="headerlink" href="#module-commandSearch.decorators" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="commandSearch.decorators.getCommandSearch">
+<code class="descclassname">commandSearch.decorators.</code><code class="descname">getCommandSearch</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#commandSearch.decorators.getCommandSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>This decorator will only run the function if the command search can be 
+found, if this is not the case an error will be raised. The timeline 
+marker will be parsed as the first argument into the function provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>ValueError</strong> – if command search doesn’t exist</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -68,19 +69,10 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">rjCMDSearch.ui package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-rjCMDSearch.ui">Module contents</a></li>
-</ul>
-</li>
-</ul>
-
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/rjCMDSearch.ui.rst.txt"
+      <li><a href="_sources/commandSearch.decorators.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -107,11 +99,11 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">rjCMDSearch  &#39;&#39; documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">commandSearch  &#39;&#39; documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, &#39;Robert Joosten&#39;.
+        &#169; Copyright 2018, &#39;Robert Joosten&#39;.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
     </div>
   </body>

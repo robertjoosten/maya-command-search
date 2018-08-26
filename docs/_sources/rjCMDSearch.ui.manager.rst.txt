@@ -1,7 +1,0 @@
-rjCMDSearch\.ui\.manager module
-===============================
-
-.. automodule:: rjCMDSearch.ui.manager
-    :members:
-    :undoc-members:
-    :show-inheritance:

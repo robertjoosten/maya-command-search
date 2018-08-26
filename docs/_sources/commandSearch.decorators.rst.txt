@@ -1,0 +1,7 @@
+commandSearch\.decorators module
+================================
+
+.. automodule:: commandSearch.decorators
+    :members:
+    :undoc-members:
+    :show-inheritance:

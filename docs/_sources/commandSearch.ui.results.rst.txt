@@ -1,0 +1,7 @@
+commandSearch\.ui\.results module
+=================================
+
+.. automodule:: commandSearch.ui.results
+    :members:
+    :undoc-members:
+    :show-inheritance:

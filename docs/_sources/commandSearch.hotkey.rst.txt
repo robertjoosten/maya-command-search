@@ -1,7 +1,7 @@
-rjCMDSearch\.commands module
+commandSearch\.hotkey module
 ============================
 
-.. automodule:: rjCMDSearch.commands
+.. automodule:: commandSearch.hotkey
     :members:
     :undoc-members:
     :show-inheritance:

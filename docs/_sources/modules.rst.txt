@@ -1,7 +1,7 @@
-rjCMDSearch
-===========
+commandSearch
+=============
 
 .. toctree::
    :maxdepth: 4
 
-   rjCMDSearch
+   commandSearch
