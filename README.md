@@ -18,9 +18,8 @@ It is also possible to store your pins and create different pins sets for differ
 Also a thank you too Perry Leijten and Guillaume Dufief for their ideas and pointers to improve the script.
 
 ## Hotkey
-The hotkey function can be used to setup hotkeys to manage the command search
-widget. This command will set focus to the widget.
+The hotkey function can be used to manage the command search widget. This command will set focus to the widget.
 
 ```python
-import rjCMDSearch; rjCMDSearch.focus()
+import commandSearch; commandSearch.focus()
 ```    
