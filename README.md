@@ -1,4 +1,4 @@
-# command-search
+# maya-command-search
 Read all buttons in Maya's native menu and make them searchable and executable. 
 
 <p align="center"><img src="docs/_images/commandSearchExample.gif?raw=true"></p>
