@@ -1,2 +1,4 @@
 import maya.cmds as cmds
-cmds.evalDeferred("import commandSearch; commandSearch.install()")
+
+import commandSearch
+cmds.evalDeferred(commandSearch.install)
