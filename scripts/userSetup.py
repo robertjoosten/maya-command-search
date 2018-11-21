@@ -1,4 +1,5 @@
 import maya.cmds as cmds
 
-import commandSearch
-cmds.evalDeferred(commandSearch.install)
+if not cmds.about(batch=True):
+    import commandSearch
+    cmds.evalDeferred(commandSearch.install)
